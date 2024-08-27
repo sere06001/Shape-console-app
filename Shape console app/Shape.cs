@@ -37,7 +37,7 @@ namespace Shape_console_app
 
         public double Circumference (double width, double height)
         {
-            double hypotenuse = Math.Sqrt(width*width + height*height);
+            double hypotenuse = Math.Sqrt(width * width + height * height);
             double sum = hypotenuse + width + height;
             return sum;
         }
