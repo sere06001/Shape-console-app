@@ -14,12 +14,12 @@ namespace Shape_console_app
             height = h;
         }
 
-        public double Area(double width, double height)
+        public override double Area(double width, double height)
         {
             return width * height;
         }
 
-        public double Circumference(double width, double height)
+        public override double Circumference(double width, double height)
         {
             double sum = (width * 2) + (height * 2);
             return sum;

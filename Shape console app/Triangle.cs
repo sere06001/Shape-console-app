@@ -14,12 +14,12 @@ namespace Shape_console_app
             height = h;
         }
 
-        public double Area(double width, double height)
+        public override double Area(double width, double height)
         {
             return (width * height) / 2;
         }
 
-        public double Circumference(double width, double height)
+        public override double Circumference(double width, double height)
         {
             double hypotenuse = Math.Sqrt(width * width + height * height);
             double sum = hypotenuse + width + height;

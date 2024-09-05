@@ -12,10 +12,13 @@ namespace Shape_console_app
         protected double width;
         protected double height;
 
+        public Shape(){ }
         public Shape (double w, double h)
         {
             width = w;
             height = h;
         }
+        public virtual double Area(double width, double height) { return 0; }
+        public virtual double Circumference(double width, double height) { return 0; }
     }
 }
