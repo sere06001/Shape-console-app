@@ -5,7 +5,6 @@ namespace Shape_console_app
     {
         static void Main(string[] args)
         {
-            Shape shape = null;
             Console.WriteLine("Programmet kommer beräkna arean och omkretsen av en rätvinklig triangel eller rektangel där du angett dess höjd och bredd.");
             Console.WriteLine("Skriv endast in tal när du anger höjd och bredd, alltså inte med måttenheten.");
             Console.WriteLine();
@@ -34,20 +33,24 @@ namespace Shape_console_app
                 double width = double.Parse(Console.ReadLine());
                 Console.WriteLine();
 
-                switch (n)
-                {
-                    case 1:
-                        shape = new Triangle(width, height);
-                        Console.WriteLine($"En triangel med höjden {height} och bredden {width} har en");
-                        break;
-                    case 2:
-                        shape = new Rectangle(width, height);
-                        Console.WriteLine($"En rektangel med höjden {height} och bredden {width} har en");
-                        break;
-                }
+                Shape shape;
+                string shapeType;
 
+                if (n == 1)
+                {
+                    shape = new Triangle(width, height);
+                    shapeType = "triangel";
+                }
+                else
+                {
+                    shape = new Rectangle(width, height);
+                    shapeType = "rektangel";
+                }
+                
+                Console.WriteLine($"En {shapeType} med höjden {height} och bredden {width} har en");
                 Console.WriteLine($"Omkrets: {shape.Circumference(width, height)}");
                 Console.WriteLine($"Area: {shape.Area(width, height)}");
+
                 Console.ReadKey();
                 Console.Clear();
             }
