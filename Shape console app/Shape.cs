@@ -17,6 +17,8 @@ namespace Shape_console_app
             width = w;
             height = h;
         }
+
+        //Incomplete area and circumference, abstract class to prevent missuse
         public virtual double Area(double width, double height) { return 0; }
         public virtual double Circumference(double width, double height) { return 0; }
     }
