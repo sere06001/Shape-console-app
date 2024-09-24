@@ -7,19 +7,15 @@ using System.Threading.Tasks;
 
 namespace Shape_console_app
 {
-    internal class Shape
+    interface IShape
     {
-        protected double width;
-        protected double height;
-
-        public Shape (double w, double h)
+        double Area()
         {
-            width = w;
-            height = h;
+            return 0;
         }
-
-        //Incomplete area and circumference, abstract class to prevent missuse
-        public virtual double Area(double width, double height) { return 0; }
-        public virtual double Circumference(double width, double height) { return 0; }
+        double Circumference()
+        {
+            return 0;
+        }
     }
 }

@@ -6,23 +6,25 @@ using System.Threading.Tasks;
 
 namespace Shape_console_app
 {
-    internal class Rectangle : Shape
+    internal class Rectangle : IShape
     {
-        public Rectangle(double w, double h) : base(w, h)
+        double width;
+        double height;
+        public Rectangle(double w, double h)
         {
             width = w;
             height = h;
         }
 
-        public override double Area(double width, double height)
+        public double Area()
         {
-            return width * height;
+            return Math.Round(width * height, 2);
         }
 
-        public override double Circumference(double width, double height)
+        public double Circumference()
         {
             double sum = (width * 2) + (height * 2);
-            return sum;
+            return Math.Round(sum, 2);
         }
     }
 }

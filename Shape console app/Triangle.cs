@@ -6,24 +6,26 @@ using System.Threading.Tasks;
 
 namespace Shape_console_app
 {
-    internal class Triangle : Shape
+    internal class Triangle : IShape
     {
-        public Triangle(double w, double h) : base(w, h)
+        double width;
+        double height;
+        public Triangle(double w, double h)
         {
             width = w;
             height = h;
         }
 
-        public override double Area(double width, double height)
+        public double Area()
         {
-            return (width * height) / 2;
+            return Math.Round((width * height) / 2, 2);
         }
 
-        public override double Circumference(double width, double height)
+        public double Circumference()
         {
             double hypotenuse = Math.Sqrt(width * width + height * height);
             double sum = hypotenuse + width + height;
-            return sum;
+            return Math.Round(sum, 2);
         }
     }
 }
